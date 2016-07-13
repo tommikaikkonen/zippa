@@ -84,17 +84,17 @@ z.down().right().value().value
 
 ## API
 
-### makeZipper<T>
+### makeZipper\<T>
 
 Takes three parameters in this order:
 
 - `isBranch: (item: T) => boolean`: should return whether the item can have children.
-- `getChildren: (item: T) => Array<T>`: should the children of `item` as an Array.
+- `getChildren: (item: T) => Array<T>`: should return the children of `item` as an Array.
 - `makeItem: (item: T, children: Array<T>) => T`: given an old item `item`, and new children `children`, should return a new `item` with the supplied children.
 
 Returns a `Zipper` class using the implementation provided by the three functions. The Zipper class provides both a plain function API and a chainable API, which are described below.
 
-### Zipper<T>
+### Zipper\<T>
 
 #### Construction
 
@@ -123,11 +123,10 @@ value(right(down(l)))
 
 #### Instance methods
 
-For each instance method in the chainable API, there's an identically named static method on the class.
-
 **Queries and Movement**
 
 - `value(): ?T`: returns the item at the current location
+- `uo(): Zipper` moves location to the parent, applying any changes made.
 - `down(): Zipper` moves location to the leftmost child.
 - `left(): Zipper`: moves location to the left sibling
 - `leftmost(): Zipper`: moves location to the leftmost sibling
@@ -135,7 +134,7 @@ For each instance method in the chainable API, there's an identically named stat
 - `rightmost(): Zipper`: moves location to the rightmost sibling
 - `root(): Zipper` moves location to the root, applying any changes made
 - `next(): Zipper`: moves location to the next element in depth-first order
-- `prev(): Zipper`: moves location to the previous element in depth-first order.
+- `prev(): Zipper`: moves location to the previous element in depth-first order
 - `isEnd(): boolean`: returns true if zipper has been exhausted by calls to `next()`, otherwise false
 
 **Modification**
@@ -143,8 +142,8 @@ For each instance method in the chainable API, there's an identically named stat
 - `remove(): Zipper`: removes item at current location.
 - `replace(item: T): Zipper`: replaces item at current location with `item`
 - `edit(fn: (item: T) => T): Zipper`: replaces item at current location with the return value of calling `fn` with the current item. 
-- `insertChild(item: T): Zipper`: inserts an item as the first child. Number of children gros by one
-- `appendChild(item: T): Zipper`: inserts an item as the last child. Number of children gros by one
+- `insertChild(item: T): Zipper`: inserts an item as the first child. Number of children grows by one
+- `appendChild(item: T): Zipper`: inserts an item as the last child. Number of children grows by one
 - `insertLeft(item: T): Zipper`: inserts `item` as the left sibling
 - `insertRight(item: T): Zipper`: inserts `item` as the right sibling
 
@@ -154,7 +153,7 @@ For each instance method in the chainable API, there's an identically named stat
 
 #### Static Methods
 
-For each instance method in the chainable API above, there's an identically named static method on the class which accept location values returned by `Zipper.loc`. The location value is always the last parameter.
+For each instance method in the chainable API above, there's an identically named static method on the Zipper class which accept location values returned by `Zipper.loc`. The location value is always the last parameter.
 
 ### ArrayZipper
 
