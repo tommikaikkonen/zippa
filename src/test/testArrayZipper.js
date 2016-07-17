@@ -1,11 +1,10 @@
+import pipe from 'ramda/src/pipe';
 import chai from 'chai';
 import sinonChai from 'sinon-chai';
-import { ArrayZipper } from '../index';
+import { ArrayZipper, zip } from '../index';
 
 chai.use(sinonChai);
 const { expect } = chai;
-
-const log = (x) => console.log(x);
 
 describe('ArrayZipper', () => {
     const simpleArr = [1, 2, 3, 4];
@@ -17,6 +16,7 @@ describe('ArrayZipper', () => {
     it('gets correct values', () => {
         const z = ArrayZipper.from(simpleArr);
 
+        expect(pipe(zip.down, zip.right, zip.value)(z)).to.equal(2);
         expect(z.down().value()).to.equal(1);
         expect(z.down().right().value()).to.equal(2);
         expect(z.down().right().right().value()).to.equal(3);
@@ -137,9 +137,7 @@ describe('ArrayZipper', () => {
             expect(z.value()).to.deep.equal(result);
         });
 
-        const finished = z.prev();
-
-        expect(finished.prev()).to.equal(finished);
+        expect(z.isTop()).to.be.true;
     });
 
     it('isEnd', () => {

@@ -1,11 +1,11 @@
 {
   "extends": "airbnb/base",
   "parser": "babel-eslint",
-  "plugins": ["flowtype", "flow-vars"],
   "env": {
     "mocha": true
   },
   "rules": {
+    "spaced-comment": 0,
     "indent": [2, 4],
     "no-unused-vars": 1,
     "id-length": 0,
@@ -14,29 +14,7 @@
     "max-len": ["warn"],
     "no-else-return": 0,
     "no-confusing-arrow": 1,
-    "prefer-rest-params": 0,
-    "flow-vars/define-flow-type": 1,
-    "flow-vars/use-flow-type": 1,
-    "flowtype/require-parameter-type": 1,
-    "flowtype/require-return-type": [
-        1,
-        "always",
-        {
-            "annotateUndefined": "never"
-        }
-    ],
-    "flowtype/space-after-type-colon": [
-        1,
-        "always"
-    ],
-    "flowtype/space-before-type-colon": [
-        1,
-        "never"
-    ],
-    "flowtype/type-id-match": [
-        1,
-        "^([A-Z][a-z0-9]+)+Type$"
-    ]
+    "prefer-rest-params": 0
   },
   "ecmaFeatures": {
     "restParams": true,

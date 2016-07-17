@@ -5,13 +5,42 @@ zippa
 
 Similar to [Neith](https://github.com/mattbierner/neith), but with JS Arrays instead infinite streams and a chainable API in addition to a plain function API.
 
-## Example Usage with ListZipper
+## Example Usage with ArrayZipper
+
+Instantiation
+```javascript
+import { zip, ArrayZipper } from 'zippa';
+
+let z = ArrayZipper.from([1, 2, 3, 4]);
+```
+
+The functional API is simple. You can import the functions straight from `zippa` with `import { up, down, right, left } from 'zippa'`, or get them under a namespace with `import { zip } from 'zippa';` All functions are curried.
 
 ```javascript
-import makeZipper, { ListZipper } from 'zippa';
+import pipe from 'ramda/src/pipe'; // reverse compose
+import until from 'ramda/src/until';
 
-let z = ListZipper.from([1, 2, 3, 4]);
+const thirdChild = pipe(zip.down, zip.right, zip.right, zip.value);
+thirdChild(z);
+// 3
 
+const increment = zip.edit(x => x + 1);
+const incrementChildren = pipe(
+    z.down,
+    until(zip.isRightmost, pipe(increment, zip.right))
+    increment,
+    zip.root,
+    zip.value
+);
+
+incrementChildren(ArrayZipper.from([1, 2, 3, 4]));
+// [2, 3, 4, 5]
+```
+
+The chainable API works with the identically named methods on the zipper value. You can exchange between between both styles. Methods are not curried.
+
+```javascript
+let z = ArrayZipper.from([1, 2, 3, 4]);
 z = z.down();
 z.value()
 // 1
@@ -61,7 +90,7 @@ function makeNode(oldParent, children) {
 Import `zippa`, make a `TreeZipper`, and zip away.
 
 ```javascript
-import makeZipper from 'zippa';
+import { makeZipper } from 'zippa';
 
 const TreeZipper = makeZipper(isBranch, getChildren, makeNode);
 
@@ -84,84 +113,7 @@ z.down().right().value().value
 
 ## API
 
-### makeZipper\<T>
-
-Takes three parameters in this order:
-
-- `isBranch: (item: T) => boolean`: should return whether the item can have children.
-- `getChildren: (item: T) => Array<T>`: should return the children of `item` as an Array.
-- `makeItem: (item: T, children: Array<T>) => T`: given an old item `item`, and new children `children`, should return a new `item` with the supplied children.
-
-Returns a `Zipper` class using the implementation provided by the three functions. The Zipper class provides both a plain function API and a chainable API, which are described below.
-
-### Zipper\<T>
-
-#### Construction
-
-Use the static method `from` to construct instances suitable for the chainable API:
-
-```javascript
-const zipper = ListZipper.from([1, 2, 3])
-zipper.down().right() // etc
-```
-
-Use `loc` to construct Location 2-tuples for the plain function API:
-
-```javascript
-const {
-    down,
-    right,
-    loc,
-    value,
-} = ListZipper.
-const l = loc([1, 2, 3]);
-
-value(right(down(l)))
-// 2
-```
-
-
-#### Instance methods
-
-**Queries and Movement**
-
-- `value(): ?T`: returns the item at the current location
-- `uo(): Zipper` moves location to the parent, applying any changes made.
-- `down(): Zipper` moves location to the leftmost child.
-- `left(): Zipper`: moves location to the left sibling
-- `leftmost(): Zipper`: moves location to the leftmost sibling
-- `right(): Zipper`: moves location to the right sibling
-- `rightmost(): Zipper`: moves location to the rightmost sibling
-- `root(): Zipper` moves location to the root, applying any changes made
-- `next(): Zipper`: moves location to the next element in depth-first order
-- `prev(): Zipper`: moves location to the previous element in depth-first order
-- `isEnd(): boolean`: returns true if zipper has been exhausted by calls to `next()`, otherwise false
-
-**Modification**
-
-- `remove(): Zipper`: removes item at current location.
-- `replace(item: T): Zipper`: replaces item at current location with `item`
-- `edit(fn: (item: T) => T): Zipper`: replaces item at current location with the return value of calling `fn` with the current item. 
-- `insertChild(item: T): Zipper`: inserts an item as the first child. Number of children grows by one
-- `appendChild(item: T): Zipper`: inserts an item as the last child. Number of children grows by one
-- `insertLeft(item: T): Zipper`: inserts `item` as the left sibling
-- `insertRight(item: T): Zipper`: inserts `item` as the right sibling
-
-**Side-effects**
-
-- `do(fn: (item: T, path: PathType) => any): Zipper`: calls `fn` with the current item and path, and returns the current zipper. Useful for debugging with `console.log`.
-
-#### Static Methods
-
-For each instance method in the chainable API above, there's an identically named static method on the Zipper class which accept location values returned by `Zipper.loc`. The location value is always the last parameter.
-
-### ArrayZipper
-
-Concrete Zipper class to manipulate and traverse Arrays.
-
-```javascript
-import { ListZipper } from 'zippa';
-```
+For API reference, see [DOCUMENTATION.md](DOCUMENTATION.md)
 
 ## License
 

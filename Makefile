@@ -6,7 +6,11 @@ MOCHA_TARGET=src/**/test*.js
 clean:
 	rm -rf lib
 
+docs:
+	$(BIN)/documentation build -f md -o DOCUMENTATION.md -g ./src/*.js --config ./documentation.yml
+
 build: clean
+	$(MAKE) docs
 	$(BIN)/babel src --out-dir lib
 	webpack --optimize-minimize
 
@@ -20,4 +24,4 @@ lint:
 	$(BIN)/eslint src
 
 
-PHONY: build clean test test-watch lint
+PHONY: build clean test test-watch lint docs
