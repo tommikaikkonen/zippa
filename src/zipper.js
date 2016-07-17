@@ -2,12 +2,12 @@ import __ from 'ramda/src/__';
 import assoc from 'ramda/src/assoc';
 import arrOf from 'ramda/src/of';
 import always from 'ramda/src/always';
-import both from 'ramda/src/both';
 import call from 'ramda/src/call';
 import cond from 'ramda/src/cond';
 import converge from 'ramda/src/converge';
 import complement from 'ramda/src/complement';
 import curry from 'ramda/src/curry';
+import either from 'ramda/src/either';
 import head from 'ramda/src/head';
 import equals from 'ramda/src/equals';
 import identity from 'ramda/src/identity';
@@ -23,6 +23,7 @@ import merge from 'ramda/src/merge';
 import alwaysTrue from 'ramda/src/T';
 import when from 'ramda/src/when';
 import unless from 'ramda/src/unless';
+import until from 'ramda/src/until';
 import unnest from 'ramda/src/unnest';
 
 const TOP = null;
@@ -53,7 +54,8 @@ const TOPPATH = {
  *
  * Keeps track of the current item, path, and metadata (implementation functions).
  *
- * Don't use this constructor directly. Create your own Zipper factory with `makeZipper`, and use it to create instances of Zipper.
+ * Don't use this constructor directly. Create your own Zipper factory with `makeZipper`,
+ * and use it to create instances of Zipper.
  *
  * @class Zipper
  * @namespace Zipper
@@ -210,9 +212,9 @@ export const canGoRight = complement(isRightmost);
  * @returns {Zipper}
  */
 export function leftmost(zipper) {
-    const path = getPath(zipper);
-
     if (isTop(zipper) || isLeftmost(zipper)) return zipper;
+
+    const path = getPath(zipper);
 
     const _lefts = _leftsFromPath(path);
     const _rights = _rightsFromPath(path);
@@ -305,9 +307,9 @@ export function right(zipper) {
  * @returns {Zipper}
  */
 export function rightmost(zipper) {
-    const path = getPath(zipper);
-
     if (isRightmost(zipper)) return zipper;
+
+    const path = getPath(zipper);
 
     const _rights = _rightsFromPath(path);
     const _lefts = _leftsFromPath(path);
@@ -468,22 +470,14 @@ export const up = cond([
  */
 export const root = unless(isEnd, whilst(isNotTop, up));
 
-
-function _canGoUpRight(zipper) {
-    if (isTop(zipper)) return false;
-    const parent = up(zipper);
-    return !!parent && canGoRight(parent);
-}
-
-const isNotTopAndCantGoUpAndRight = both(isNotTop, complement(_canGoUpRight));
 const toEnd = z => zipperFrom(z, getItem(z), END);
 
 const nextUp = pipe(
-    whilst(isNotTopAndCantGoUpAndRight, up),
+    until(either(isTop, canGoRight), up),
     ifElse(
         isTop,
         toEnd,
-        pipe(up, right)
+        right,
     )
 );
 
@@ -522,15 +516,15 @@ export const prev = ifElse(
  * @returns {Zipper}
  */
 export function remove(zipper) {
-    const path = getPath(zipper);
-
     if (isTop(zipper)) {
         throw new Error('Can\'t remove top.');
     }
 
     if (isEnd(zipper)) throw new Error('Can\'t remove end');
 
+    const path = getPath(zipper);
     const _lefts = _leftsFromPath(path);
+
     if (_lefts.length) {
         const leftSibling = zipperFrom(
             zipper,
