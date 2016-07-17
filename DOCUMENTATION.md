@@ -1,6 +1,6 @@
 # makeZipper
 
-[src/zipper.js:893-907](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L893-L907 "Source code on GitHub")
+[src/zipper.js:887-901](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L887-L901 "Source code on GitHub")
 
 Makes a Zipper factory that uses the implementation provided
 in the parameters.
@@ -19,7 +19,7 @@ Returns **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 
 # value
 
-[src/zipper.js:75-75](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L75-L75 "Source code on GitHub")
+[src/zipper.js:77-77](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L77-L77 "Source code on GitHub")
 
 Gets the value of the current location.
 
@@ -31,7 +31,7 @@ Returns **(T | null)**
 
 # root
 
-[src/zipper.js:469-469](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L469-L469 "Source code on GitHub")
+[src/zipper.js:471-471](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L471-L471 "Source code on GitHub")
 
 Moves location to the root, constructing
 any changes made.
@@ -44,7 +44,7 @@ Returns **[Zipper](#zipper)**
 
 # up
 
-[src/zipper.js:449-460](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L449-L460 "Source code on GitHub")
+[src/zipper.js:451-462](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L451-L462 "Source code on GitHub")
 
 Moves location to the parent, constructing a new parent
 if the children have changed.
@@ -59,7 +59,7 @@ Returns **([Zipper](#zipper) | null)**
 
 # down
 
-[src/zipper.js:347-367](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L347-L367 "Source code on GitHub")
+[src/zipper.js:349-369](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L349-L369 "Source code on GitHub")
 
 Moves location to the leftmost child.
 If the current item is a leaf, returns null.
@@ -72,7 +72,7 @@ Returns **([Zipper](#zipper) | null)**
 
 # left
 
-[src/zipper.js:243-266](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L243-L266 "Source code on GitHub")
+[src/zipper.js:245-268](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L245-L268 "Source code on GitHub")
 
 Moves location to the left sibling.
 If the current location is already the leftmost,
@@ -86,7 +86,7 @@ Returns **([Zipper](#zipper) | null)**
 
 # right
 
-[src/zipper.js:276-297](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L276-L297 "Source code on GitHub")
+[src/zipper.js:278-299](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L278-L299 "Source code on GitHub")
 
 Moves location to the right sibling.
 If the current location is already the rightmost,
@@ -100,7 +100,7 @@ Returns **([Zipper](#zipper) | null)**
 
 # leftmost
 
-[src/zipper.js:212-233](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L212-L233 "Source code on GitHub")
+[src/zipper.js:214-235](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L214-L235 "Source code on GitHub")
 
 Moves location to the leftmost sibling.
 If the current location is already the leftmost,
@@ -114,7 +114,7 @@ Returns **[Zipper](#zipper)**
 
 # rightmost
 
-[src/zipper.js:307-327](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L307-L327 "Source code on GitHub")
+[src/zipper.js:309-329](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L309-L329 "Source code on GitHub")
 
 Moves location to the rightmost sibling.
 If the current location is already the rightmost,
@@ -128,7 +128,7 @@ Returns **[Zipper](#zipper)**
 
 # next
 
-[src/zipper.js:496-501](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L496-L501 "Source code on GitHub")
+[src/zipper.js:490-495](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L490-L495 "Source code on GitHub")
 
 Moves location to the next element in depth-first order.
 
@@ -140,7 +140,7 @@ Returns **[Zipper](#zipper)**
 
 # prev
 
-[src/zipper.js:511-515](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L511-L515 "Source code on GitHub")
+[src/zipper.js:505-509](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L505-L509 "Source code on GitHub")
 
 Moves location to the previous element in depth-first order.
 
@@ -152,7 +152,7 @@ Returns **[Zipper](#zipper)**
 
 # isEnd
 
-[src/zipper.js:130-130](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L130-L130 "Source code on GitHub")
+[src/zipper.js:132-132](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L132-L132 "Source code on GitHub")
 
 Returns a boolean indicating if the zipper has been
 exhausted by calls to `next`.
@@ -165,7 +165,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 # isTop
 
-[src/zipper.js:149-149](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L149-L149 "Source code on GitHub")
+[src/zipper.js:151-151](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L151-L151 "Source code on GitHub")
 
 Returns a boolean indicating if the zipper is at the top.
 
@@ -177,7 +177,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 # isNotTop
 
-[src/zipper.js:156-156](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L156-L156 "Source code on GitHub")
+[src/zipper.js:158-158](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L158-L158 "Source code on GitHub")
 
 Returns a boolean indicating if the zipper is not at the top.
 
@@ -189,7 +189,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 # isBranch
 
-[src/zipper.js:101-103](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L101-L103 "Source code on GitHub")
+[src/zipper.js:103-105](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L103-L105 "Source code on GitHub")
 
 Returns a boolean indicating if the current location is not a leaf.
 
@@ -201,7 +201,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 # isLeaf
 
-[src/zipper.js:110-110](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L110-L110 "Source code on GitHub")
+[src/zipper.js:112-112](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L112-L112 "Source code on GitHub")
 
 Returns a boolean indicating if the current location is a leaf.
 
@@ -213,7 +213,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 # isLeftmost
 
-[src/zipper.js:174-174](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L174-L174 "Source code on GitHub")
+[src/zipper.js:176-176](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L176-L176 "Source code on GitHub")
 
 Returns a boolean indicating if the item at the current location
 is the leftmost sibling.
@@ -226,7 +226,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 # isRightmost
 
-[src/zipper.js:182-182](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L182-L182 "Source code on GitHub")
+[src/zipper.js:184-184](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L184-L184 "Source code on GitHub")
 
 Returns a boolean indicating if the item at the current location
 is the rightmost sibling.
@@ -239,7 +239,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 # canGoUp
 
-[src/zipper.js:429-429](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L429-L429 "Source code on GitHub")
+[src/zipper.js:431-431](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L431-L431 "Source code on GitHub")
 
 Returns a boolean indicating if the zipper is not at the top.
 
@@ -253,7 +253,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 # canGoLeft
 
-[src/zipper.js:192-192](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L192-L192 "Source code on GitHub")
+[src/zipper.js:194-194](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L194-L194 "Source code on GitHub")
 
 Returns a boolean indicating if the item at the current location
 is the leftmost sibling.
@@ -268,7 +268,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 # canGoRight
 
-[src/zipper.js:202-202](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L202-L202 "Source code on GitHub")
+[src/zipper.js:204-204](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L204-L204 "Source code on GitHub")
 
 Returns a boolean indicating if the item at the current location
 is the rightmost sibling.
@@ -283,7 +283,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 # canGoDown
 
-[src/zipper.js:335-337](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L335-L337 "Source code on GitHub")
+[src/zipper.js:337-339](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L337-L339 "Source code on GitHub")
 
 Alias for `isBranch`
 
@@ -296,7 +296,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 # replace
 
-[src/zipper.js:970-970](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L970-L970 "Source code on GitHub")
+[src/zipper.js:964-964](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L964-L964 "Source code on GitHub")
 
 Replaces the current item with the given value.
 
@@ -309,7 +309,7 @@ Returns **[Zipper](#zipper)**
 
 # edit
 
-[src/zipper.js:960-960](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L960-L960 "Source code on GitHub")
+[src/zipper.js:954-954](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L954-L954 "Source code on GitHub")
 
 Replaces the current item with value returned
 by calling `fn` with the current item.
@@ -324,7 +324,7 @@ Returns **[Zipper](#zipper)**
 
 # insertLeft
 
-[src/zipper.js:919-919](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L919-L919 "Source code on GitHub")
+[src/zipper.js:913-913](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L913-L913 "Source code on GitHub")
 
 Inserts a new item as the left sibling.
 
@@ -337,7 +337,7 @@ Returns **[Zipper](#zipper)**
 
 # insertRight
 
-[src/zipper.js:929-929](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L929-L929 "Source code on GitHub")
+[src/zipper.js:923-923](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L923-L923 "Source code on GitHub")
 
 Inserts a new item as the right sibling.
 
@@ -350,7 +350,7 @@ Returns **[Zipper](#zipper)**
 
 # insertChild
 
-[src/zipper.js:939-939](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L939-L939 "Source code on GitHub")
+[src/zipper.js:933-933](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L933-L933 "Source code on GitHub")
 
 Inserts a new item as the leftmost child.
 
@@ -363,7 +363,7 @@ Returns **[Zipper](#zipper)**
 
 # appendChild
 
-[src/zipper.js:948-948](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L948-L948 "Source code on GitHub")
+[src/zipper.js:942-942](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L942-L942 "Source code on GitHub")
 
 Inserts a new item as the rightmost child.
 
@@ -375,7 +375,7 @@ Returns **[Zipper](#zipper)**
 
 # remove
 
-[src/zipper.js:524-556](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L524-L556 "Source code on GitHub")
+[src/zipper.js:518-550](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L518-L550 "Source code on GitHub")
 
 Removes item at the current location.
 Returns location that would be previous in depth first search.
@@ -388,13 +388,14 @@ Returns **[Zipper](#zipper)**
 
 # Zipper
 
-[src/zipper.js:61-65](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L61-L65 "Source code on GitHub")
+[src/zipper.js:63-67](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L63-L67 "Source code on GitHub")
 
 The Zipper class.
 
 Keeps track of the current item, path, and metadata (implementation functions).
 
-Don't use this constructor directly. Create your own Zipper factory with `makeZipper`, and use it to create instances of Zipper.
+Don't use this constructor directly. Create your own Zipper factory with `makeZipper`,
+and use it to create instances of Zipper.
 
 **Parameters**
 
@@ -404,7 +405,7 @@ Don't use this constructor directly. Create your own Zipper factory with `makeZi
 
 ## Zipper.prototype.value
 
-[src/zipper.js:592-592](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L592-L592 "Source code on GitHub")
+[src/zipper.js:586-586](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L586-L586 "Source code on GitHub")
 
 Gets the value of the current location.
 
@@ -412,7 +413,7 @@ Returns **(T | null)**
 
 ## Zipper.prototype.root
 
-[src/zipper.js:603-603](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L603-L603 "Source code on GitHub")
+[src/zipper.js:597-597](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L597-L597 "Source code on GitHub")
 
 Moves location to the root, constructing
 any changes made.
@@ -421,7 +422,7 @@ Returns **[Zipper](#zipper)**
 
 ## Zipper.prototype.up
 
-[src/zipper.js:614-614](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L614-L614 "Source code on GitHub")
+[src/zipper.js:608-608](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L608-L608 "Source code on GitHub")
 
 Moves location to the parent.
 If at the top, returns null.
@@ -430,7 +431,7 @@ Returns **([Zipper](#zipper) | null)**
 
 ## Zipper.prototype.down
 
-[src/zipper.js:625-625](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L625-L625 "Source code on GitHub")
+[src/zipper.js:619-619](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L619-L619 "Source code on GitHub")
 
 Moves location to the leftmost child.
 If the current item is a leaf, returns null.
@@ -439,7 +440,7 @@ Returns **([Zipper](#zipper) | null)**
 
 ## Zipper.prototype.left
 
-[src/zipper.js:637-637](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L637-L637 "Source code on GitHub")
+[src/zipper.js:631-631](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L631-L631 "Source code on GitHub")
 
 Moves location to the left sibling.
 If the current location is already the leftmost,
@@ -449,7 +450,7 @@ Returns **([Zipper](#zipper) | null)**
 
 ## Zipper.prototype.right
 
-[src/zipper.js:649-649](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L649-L649 "Source code on GitHub")
+[src/zipper.js:643-643](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L643-L643 "Source code on GitHub")
 
 Moves location to the right sibling.
 If the current location is already the rightmost,
@@ -459,7 +460,7 @@ Returns **([Zipper](#zipper) | null)**
 
 ## Zipper.prototype.leftmost
 
-[src/zipper.js:661-661](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L661-L661 "Source code on GitHub")
+[src/zipper.js:655-655](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L655-L655 "Source code on GitHub")
 
 Moves location to the leftmost sibling.
 If the current location is already the leftmost,
@@ -469,7 +470,7 @@ Returns **[Zipper](#zipper)**
 
 ## Zipper.prototype.rightmost
 
-[src/zipper.js:673-673](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L673-L673 "Source code on GitHub")
+[src/zipper.js:667-667](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L667-L667 "Source code on GitHub")
 
 Moves location to the rightmost sibling.
 If the current location is already the rightmost,
@@ -479,7 +480,7 @@ Returns **[Zipper](#zipper)**
 
 ## Zipper.prototype.next
 
-[src/zipper.js:683-683](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L683-L683 "Source code on GitHub")
+[src/zipper.js:677-677](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L677-L677 "Source code on GitHub")
 
 Moves location to the next element in depth-first order.
 
@@ -487,7 +488,7 @@ Returns **[Zipper](#zipper)**
 
 ## Zipper.prototype.prev
 
-[src/zipper.js:693-693](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L693-L693 "Source code on GitHub")
+[src/zipper.js:687-687](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L687-L687 "Source code on GitHub")
 
 Moves location to the previous element in depth-first order.
 
@@ -495,7 +496,7 @@ Returns **[Zipper](#zipper)**
 
 ## Zipper.prototype.isEnd
 
-[src/zipper.js:705-705](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L705-L705 "Source code on GitHub")
+[src/zipper.js:699-699](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L699-L699 "Source code on GitHub")
 
 Returns a boolean indicating if the zipper has been
 exhausted by calls to `next`.
@@ -504,7 +505,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ## Zipper.prototype.isTop
 
-[src/zipper.js:715-715](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L715-L715 "Source code on GitHub")
+[src/zipper.js:709-709](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L709-L709 "Source code on GitHub")
 
 Returns a boolean indicating if the zipper is at the top.
 
@@ -512,7 +513,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ## Zipper.prototype.isBranch
 
-[src/zipper.js:725-725](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L725-L725 "Source code on GitHub")
+[src/zipper.js:719-719](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L719-L719 "Source code on GitHub")
 
 Returns a boolean indicating if the current location is not a leaf.
 
@@ -520,7 +521,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ## Zipper.prototype.isLeaf
 
-[src/zipper.js:735-735](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L735-L735 "Source code on GitHub")
+[src/zipper.js:729-729](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L729-L729 "Source code on GitHub")
 
 Returns a boolean indicating if the current location is a leaf.
 
@@ -528,7 +529,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ## Zipper.prototype.isLeftmost
 
-[src/zipper.js:746-746](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L746-L746 "Source code on GitHub")
+[src/zipper.js:740-740](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L740-L740 "Source code on GitHub")
 
 Returns a boolean indicating if the item at the current location
 is the leftmost sibling.
@@ -537,7 +538,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ## Zipper.prototype.isRightmost
 
-[src/zipper.js:757-757](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L757-L757 "Source code on GitHub")
+[src/zipper.js:751-751](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L751-L751 "Source code on GitHub")
 
 Returns a boolean indicating if the item at the current location
 is the rightmost sibling.
@@ -546,7 +547,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ## Zipper.prototype.canGoUp
 
-[src/zipper.js:767-767](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L767-L767 "Source code on GitHub")
+[src/zipper.js:761-761](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L761-L761 "Source code on GitHub")
 
 Alias for `isTop`.
 
@@ -554,7 +555,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ## Zipper.prototype.canGoLeft
 
-[src/zipper.js:777-777](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L777-L777 "Source code on GitHub")
+[src/zipper.js:771-771](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L771-L771 "Source code on GitHub")
 
 Alias for `isLeftmost`
 
@@ -562,7 +563,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ## Zipper.prototype.canGoRight
 
-[src/zipper.js:787-787](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L787-L787 "Source code on GitHub")
+[src/zipper.js:781-781](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L781-L781 "Source code on GitHub")
 
 Alias for `isRightmost`
 
@@ -570,7 +571,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ## Zipper.prototype.canGoDown
 
-[src/zipper.js:797-797](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L797-L797 "Source code on GitHub")
+[src/zipper.js:791-791](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L791-L791 "Source code on GitHub")
 
 Alias for `isBranch`
 
@@ -578,7 +579,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ## Zipper.prototype.edit
 
-[src/zipper.js:810-810](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L810-L810 "Source code on GitHub")
+[src/zipper.js:804-804](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L804-L804 "Source code on GitHub")
 
 Replaces the current item with value returned
 by calling `fn` with the current item.
@@ -592,7 +593,7 @@ Returns **[Zipper](#zipper)**
 
 ## Zipper.prototype.replace
 
-[src/zipper.js:821-821](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L821-L821 "Source code on GitHub")
+[src/zipper.js:815-815](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L815-L815 "Source code on GitHub")
 
 Replaces the current item with the given value.
 
@@ -604,7 +605,7 @@ Returns **[Zipper](#zipper)**
 
 ## Zipper.prototype.insertLeft
 
-[src/zipper.js:832-832](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L832-L832 "Source code on GitHub")
+[src/zipper.js:826-826](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L826-L826 "Source code on GitHub")
 
 Inserts a new item as the left sibling.
 
@@ -616,7 +617,7 @@ Returns **[Zipper](#zipper)**
 
 ## Zipper.prototype.insertRight
 
-[src/zipper.js:843-843](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L843-L843 "Source code on GitHub")
+[src/zipper.js:837-837](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L837-L837 "Source code on GitHub")
 
 Inserts a new item as the right sibling.
 
@@ -628,7 +629,7 @@ Returns **[Zipper](#zipper)**
 
 ## Zipper.prototype.insertChild
 
-[src/zipper.js:854-854](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L854-L854 "Source code on GitHub")
+[src/zipper.js:848-848](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L848-L848 "Source code on GitHub")
 
 Inserts a new item as the leftmost child.
 
@@ -640,7 +641,7 @@ Returns **[Zipper](#zipper)**
 
 ## Zipper.prototype.appendChild
 
-[src/zipper.js:865-865](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L865-L865 "Source code on GitHub")
+[src/zipper.js:859-859](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L859-L859 "Source code on GitHub")
 
 Inserts a new item as the rightmost child.
 
@@ -652,7 +653,7 @@ Returns **[Zipper](#zipper)**
 
 ## Zipper.prototype.remove
 
-[src/zipper.js:876-876](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/zipper.js#L876-L876 "Source code on GitHub")
+[src/zipper.js:870-870](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/zipper.js#L870-L870 "Source code on GitHub")
 
 Removes item at the current location.
 Returns location that would be previous in depth first search.
@@ -661,7 +662,7 @@ Returns **[Zipper](#zipper)**
 
 # ArrayZipper
 
-[src/array_zipper.js:12-16](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/array_zipper.js#L12-L16 "Source code on GitHub")
+[src/array_zipper.js:12-16](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/array_zipper.js#L12-L16 "Source code on GitHub")
 
 Zipper for nested Arrays.
 
@@ -676,7 +677,7 @@ Returns **[Zipper](#zipper)**
 
 # walk
 
-[src/walk.js:35-40](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/walk.js#L35-L40 "Source code on GitHub")
+[src/walk.js:35-40](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/walk.js#L35-L40 "Source code on GitHub")
 
 **Parameters**
 
@@ -686,7 +687,7 @@ Returns **[Zipper](#zipper)**
 
 ## walk.walk
 
-[src/walk.js:35-40](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/walk.js#L35-L40 "Source code on GitHub")
+[src/walk.js:35-40](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/walk.js#L35-L40 "Source code on GitHub")
 
 Walks the data structure in depth-first order,
 applying inner and outer functions before and after (respectively) each
@@ -705,7 +706,7 @@ Returns **[Zipper](#zipper)**
 
 ## walk.postWalk
 
-[src/walk.js:55-57](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/walk.js#L55-L57 "Source code on GitHub")
+[src/walk.js:55-57](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/walk.js#L55-L57 "Source code on GitHub")
 
 Walks the data structure in depth-first order, applying
 the function after the item's subtree has been walked.
@@ -722,7 +723,7 @@ Returns **[Zipper](#zipper)**
 
 ## walk.preWalk
 
-[src/walk.js:72-74](https://github.com/tommikaikkonen/zippa/blob/30089ae04351fad9f640541ced02e28e6f9e6d25/src/walk.js#L72-L74 "Source code on GitHub")
+[src/walk.js:72-74](https://github.com/tommikaikkonen/zippa/blob/00b7aa18a70955fe5a7831d391e75ba7f8de29e9/src/walk.js#L72-L74 "Source code on GitHub")
 
 Walks the data structure in depth-first order, applying
 the function before the item's subtree has been walked.
