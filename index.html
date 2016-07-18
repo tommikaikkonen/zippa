@@ -1,0 +1,4981 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>  | Documentation</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
+  <link href='assets/github.css' type='text/css' rel='stylesheet' />
+</head>
+<body class='documentation'>
+  <div class='max-width-4 mx-auto'>
+    <div class='clearfix md-mxn2'>
+      <div class='fixed xs-hide fix-3 overflow-auto max-height-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'></h3>
+          <div class='mb1'><code></code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#zippa'
+                  class="h5 bold black caps">
+                  zippa
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#makezipper'
+                  class="">
+                  makeZipper
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#value'
+                  class="">
+                  value
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#root'
+                  class="">
+                  root
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#up'
+                  class="">
+                  up
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#down'
+                  class="">
+                  down
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#left'
+                  class="">
+                  left
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#right'
+                  class="">
+                  right
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#leftmost'
+                  class="">
+                  leftmost
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#rightmost'
+                  class="">
+                  rightmost
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#next'
+                  class="">
+                  next
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#prev'
+                  class="">
+                  prev
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#isend'
+                  class="">
+                  isEnd
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#istop'
+                  class="">
+                  isTop
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#isnottop'
+                  class="">
+                  isNotTop
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#isbranch'
+                  class="">
+                  isBranch
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#isleaf'
+                  class="">
+                  isLeaf
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#isleftmost'
+                  class="">
+                  isLeftmost
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#isrightmost'
+                  class="">
+                  isRightmost
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#cangoup'
+                  class="">
+                  canGoUp
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#cangoleft'
+                  class="">
+                  canGoLeft
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#cangoright'
+                  class="">
+                  canGoRight
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#cangodown'
+                  class="">
+                  canGoDown
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#replace'
+                  class="">
+                  replace
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#edit'
+                  class="">
+                  edit
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#insertleft'
+                  class="">
+                  insertLeft
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#insertright'
+                  class="">
+                  insertRight
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#insertchild'
+                  class="">
+                  insertChild
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#appendchild'
+                  class="">
+                  appendChild
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#remove'
+                  class="">
+                  remove
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#zipper'
+                  class=" toggle-sibling">
+                  Zipper
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.value'
+                        class='regular pre-open'>
+                        #Zipper.prototype.value
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.root'
+                        class='regular pre-open'>
+                        #Zipper.prototype.root
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.up'
+                        class='regular pre-open'>
+                        #Zipper.prototype.up
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.down'
+                        class='regular pre-open'>
+                        #Zipper.prototype.down
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.left'
+                        class='regular pre-open'>
+                        #Zipper.prototype.left
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.right'
+                        class='regular pre-open'>
+                        #Zipper.prototype.right
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.leftmost'
+                        class='regular pre-open'>
+                        #Zipper.prototype.leftmost
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.rightmost'
+                        class='regular pre-open'>
+                        #Zipper.prototype.rightmost
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.next'
+                        class='regular pre-open'>
+                        #Zipper.prototype.next
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.prev'
+                        class='regular pre-open'>
+                        #Zipper.prototype.prev
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.isEnd'
+                        class='regular pre-open'>
+                        #Zipper.prototype.isEnd
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.isTop'
+                        class='regular pre-open'>
+                        #Zipper.prototype.isTop
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.isBranch'
+                        class='regular pre-open'>
+                        #Zipper.prototype.isBranch
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.isLeaf'
+                        class='regular pre-open'>
+                        #Zipper.prototype.isLeaf
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.isLeftmost'
+                        class='regular pre-open'>
+                        #Zipper.prototype.isLeftmost
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.isRightmost'
+                        class='regular pre-open'>
+                        #Zipper.prototype.isRightmost
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.canGoUp'
+                        class='regular pre-open'>
+                        #Zipper.prototype.canGoUp
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.canGoLeft'
+                        class='regular pre-open'>
+                        #Zipper.prototype.canGoLeft
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.canGoRight'
+                        class='regular pre-open'>
+                        #Zipper.prototype.canGoRight
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.canGoDown'
+                        class='regular pre-open'>
+                        #Zipper.prototype.canGoDown
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.edit'
+                        class='regular pre-open'>
+                        #Zipper.prototype.edit
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.replace'
+                        class='regular pre-open'>
+                        #Zipper.prototype.replace
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.insertLeft'
+                        class='regular pre-open'>
+                        #Zipper.prototype.insertLeft
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.insertRight'
+                        class='regular pre-open'>
+                        #Zipper.prototype.insertRight
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.insertChild'
+                        class='regular pre-open'>
+                        #Zipper.prototype.insertChild
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.appendChild'
+                        class='regular pre-open'>
+                        #Zipper.prototype.appendChild
+                      </a></li>
+                      
+                      <li><a
+                        href='#Zipper#Zipper.prototype.remove'
+                        class='regular pre-open'>
+                        #Zipper.prototype.remove
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#arrayzipper'
+                  class="">
+                  ArrayZipper
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#visitors'
+                  class="h5 bold black caps">
+                  Visitors
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#visit'
+                  class="">
+                  visit
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#onpre'
+                  class="">
+                  onPre
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#onpost'
+                  class="">
+                  onPost
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#pre'
+                  class="">
+                  PRE
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#post'
+                  class="">
+                  POST
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#walking'
+                  class="h5 bold black caps">
+                  Walking
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#walk'
+                  class="">
+                  walk
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#prewalk'
+                  class="">
+                  preWalk
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#postwalk'
+                  class="">
+                  postWalk
+                  
+                </a>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div class='fix-margin-3'>
+        
+          
+            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+
+  <h2 id='zippa' class='mt0'>
+    zippa
+  </h2>
+
+  
+    <p>The main zipper module.</p>
+<p>Every member is importable under the package. I.e. <code>import { makeZipper, value } from &#x27;zippa&#x27;</code></p>
+
+  
+</section>
+</div>
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='makezipper'>
+      makeZipper
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L887-L901'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Makes a Zipper factory that uses the implementation provided
+in the parameters.</p>
+
+
+  <div class='pre p1 fill-light mt0'>makeZipper</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>_isBranch</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code> Function with signature
+<code>(item: T) =&gt; boolean</code>
+
+that indicates if the item can have children.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>_getChildren</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code> Function with signature
+<code>(item: T) =&gt; Array&lt;T&gt;</code>
+
+that returns an array of children for a branch.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>_makeItem</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code> Function with signature
+<code>(item: T, children: Array&lt;T&gt;) =&gt; T</code>
+
+that returns a new item, given an old item and it&#x27;s new children.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></code>:
+        zipper factory with signature 
+<code>(item: T) =&gt; Zipper</code>
+. The factory
+can also be accessed from the factory&#x27;s 
+<code>from</code>
+ property.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='value'>
+      value
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L77-L77'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Gets the value of the current location.</p>
+
+
+  <div class='pre p1 fill-light mt0'>value</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(T | null)</code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='root'>
+      root
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L471-L471'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Moves location to the root, constructing
+any changes made.</p>
+
+
+  <div class='pre p1 fill-light mt0'>root</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='up'>
+      up
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L451-L462'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Moves location to the parent, constructing a new parent
+if the children have changed.</p>
+<p>If already at the top, returns null.</p>
+
+
+  <div class='pre p1 fill-light mt0'>up</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(<a href="#zipper">Zipper</a> | null)</code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='down'>
+      down
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L349-L369'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Moves location to the leftmost child.
+If the current item is a leaf, returns null.</p>
+
+
+  <div class='pre p1 fill-light mt0'>down</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(<a href="#zipper">Zipper</a> | null)</code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='left'>
+      left
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L245-L268'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Moves location to the left sibling.
+If the current location is already the leftmost,
+returns null.</p>
+
+
+  <div class='pre p1 fill-light mt0'>left</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(<a href="#zipper">Zipper</a> | null)</code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='right'>
+      right
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L278-L299'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Moves location to the right sibling.
+If the current location is already the rightmost,
+returns null.</p>
+
+
+  <div class='pre p1 fill-light mt0'>right</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(<a href="#zipper">Zipper</a> | null)</code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='leftmost'>
+      leftmost
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L214-L235'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Moves location to the leftmost sibling.
+If the current location is already the leftmost,
+returns itself.</p>
+
+
+  <div class='pre p1 fill-light mt0'>leftmost</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='rightmost'>
+      rightmost
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L309-L329'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Moves location to the rightmost sibling.
+If the current location is already the rightmost,
+returns itself.</p>
+
+
+  <div class='pre p1 fill-light mt0'>rightmost</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='next'>
+      next
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L490-L495'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Moves location to the next element in depth-first order.</p>
+
+
+  <div class='pre p1 fill-light mt0'>next</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='prev'>
+      prev
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L505-L509'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Moves location to the previous element in depth-first order.</p>
+
+
+  <div class='pre p1 fill-light mt0'>prev</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='isend'>
+      isEnd
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L132-L132'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns a boolean indicating if the zipper has been
+exhausted by calls to <code>next</code>.</p>
+
+
+  <div class='pre p1 fill-light mt0'>isEnd</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='istop'>
+      isTop
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L151-L151'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns a boolean indicating if the zipper is at the top.</p>
+
+
+  <div class='pre p1 fill-light mt0'>isTop</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='isnottop'>
+      isNotTop
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L158-L158'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns a boolean indicating if the zipper is not at the top.</p>
+
+
+  <div class='pre p1 fill-light mt0'>isNotTop</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='isbranch'>
+      isBranch
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L103-L105'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns a boolean indicating if the current location is not a leaf.</p>
+
+
+  <div class='pre p1 fill-light mt0'>isBranch</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='isleaf'>
+      isLeaf
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L112-L112'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns a boolean indicating if the current location is a leaf.</p>
+
+
+  <div class='pre p1 fill-light mt0'>isLeaf</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='isleftmost'>
+      isLeftmost
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L176-L176'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns a boolean indicating if the item at the current location
+is the leftmost sibling.</p>
+
+
+  <div class='pre p1 fill-light mt0'>isLeftmost</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='isrightmost'>
+      isRightmost
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L184-L184'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns a boolean indicating if the item at the current location
+is the rightmost sibling.</p>
+
+
+  <div class='pre p1 fill-light mt0'>isRightmost</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='cangoup'>
+      canGoUp
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L431-L431'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns a boolean indicating if the zipper is not at the top.</p>
+<p>Alias for <a href="#isnottop">isNotTop</a></p>
+
+
+  <div class='pre p1 fill-light mt0'>canGoUp</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='cangoleft'>
+      canGoLeft
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L194-L194'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns a boolean indicating if the item at the current location
+is the leftmost sibling.</p>
+<p>Alias for <a href="#isleftmost">isLeftmost</a></p>
+
+
+  <div class='pre p1 fill-light mt0'>canGoLeft</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='cangoright'>
+      canGoRight
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L204-L204'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns a boolean indicating if the item at the current location
+is the rightmost sibling.</p>
+<p>Alias for <a href="#isrightmost">isRightmost</a></p>
+
+
+  <div class='pre p1 fill-light mt0'>canGoRight</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='cangodown'>
+      canGoDown
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L337-L339'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Alias for <code>isBranch</code></p>
+
+
+  <div class='pre p1 fill-light mt0'>canGoDown</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>ipper</span> <code class='quiet'>(Any)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='replace'>
+      replace
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L964-L964'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Replaces the current item with the given value.</p>
+
+
+  <div class='pre p1 fill-light mt0'>replace(replaceWith: T, zipper: <a href="#zipper">Zipper</a>): <a href="#zipper">Zipper</a></div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>replaceWith</span> <code class='quiet'>(T)</code> item to replace the current one with.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='edit'>
+      edit
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L954-L954'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Replaces the current item with value returned
+by calling <code>fn</code> with the current item.</p>
+
+
+  <div class='pre p1 fill-light mt0'>edit(fn: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, zipper: <a href="#zipper">Zipper</a>): <a href="#zipper">Zipper</a></div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code> Function that takes the old item
+and returns a new item.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='insertleft'>
+      insertLeft
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L913-L913'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Inserts a new item as the left sibling.</p>
+
+
+  <div class='pre p1 fill-light mt0'>insertLeft(item: T, zipper: <a href="#zipper">Zipper</a>): <a href="#zipper">Zipper</a></div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>item</span> <code class='quiet'>(T)</code> 
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='insertright'>
+      insertRight
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L923-L923'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Inserts a new item as the right sibling.</p>
+
+
+  <div class='pre p1 fill-light mt0'>insertRight(item: T, zipper: <a href="#zipper">Zipper</a>): <a href="#zipper">Zipper</a></div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>item</span> <code class='quiet'>(T)</code> 
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='insertchild'>
+      insertChild
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L933-L933'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Inserts a new item as the leftmost child.</p>
+
+
+  <div class='pre p1 fill-light mt0'>insertChild(item: T, zipper: <a href="#zipper">Zipper</a>): <a href="#zipper">Zipper</a></div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>item</span> <code class='quiet'>(T)</code> 
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='appendchild'>
+      appendChild
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L942-L942'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Inserts a new item as the rightmost child.</p>
+
+
+  <div class='pre p1 fill-light mt0'>appendChild(item: T): <a href="#zipper">Zipper</a></div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>item</span> <code class='quiet'>(T)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='remove'>
+      remove
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L518-L550'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Removes item at the current location.
+Returns location that would be previous in depth first search.</p>
+
+
+  <div class='pre p1 fill-light mt0'>remove</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='zipper'>
+      Zipper
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/zipper.js#L63-L67'>
+      <span>./src/zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>The Zipper class.</p>
+<p>Keeps track of the current item, path, and metadata (implementation functions).</p>
+<p>Don&#x27;t use this constructor directly. Create your own Zipper factory with <code>makeZipper</code>,
+and use it to create instances of Zipper.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>item</span> <code class='quiet'>(Any)</code> 
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>path</span> <code class='quiet'>(Any)</code> 
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>meta</span> <code class='quiet'>(Any)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.value'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.value</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Gets the value of the current location.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.value</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(T | null)</code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.root'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.root</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Moves location to the root, constructing
+any changes made.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.root</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.up'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.up</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Moves location to the parent.
+If at the top, returns null.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.up</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(<a href="#zipper">Zipper</a> | null)</code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.down'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.down</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Moves location to the leftmost child.
+If the current item is a leaf, returns null.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.down</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(<a href="#zipper">Zipper</a> | null)</code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.left'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.left</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Moves location to the left sibling.
+If the current location is already the leftmost,
+returns null.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.left</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(<a href="#zipper">Zipper</a> | null)</code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.right'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.right</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Moves location to the right sibling.
+If the current location is already the rightmost,
+returns null.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.right</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(<a href="#zipper">Zipper</a> | null)</code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.leftmost'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.leftmost</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Moves location to the leftmost sibling.
+If the current location is already the leftmost,
+returns itself.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.leftmost</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.rightmost'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.rightmost</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Moves location to the rightmost sibling.
+If the current location is already the rightmost,
+returns itself.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.rightmost</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.next'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.next</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Moves location to the next element in depth-first order.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.next</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.prev'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.prev</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Moves location to the previous element in depth-first order.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.prev</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.isEnd'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.isEnd</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Returns a boolean indicating if the zipper has been
+exhausted by calls to <code>next</code>.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.isEnd</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.isTop'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.isTop</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Returns a boolean indicating if the zipper is at the top.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.isTop</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.isBranch'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.isBranch</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Returns a boolean indicating if the current location is not a leaf.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.isBranch</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.isLeaf'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.isLeaf</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Returns a boolean indicating if the current location is a leaf.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.isLeaf</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.isLeftmost'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.isLeftmost</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Returns a boolean indicating if the item at the current location
+is the leftmost sibling.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.isLeftmost</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.isRightmost'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.isRightmost</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Returns a boolean indicating if the item at the current location
+is the rightmost sibling.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.isRightmost</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.canGoUp'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.canGoUp</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Alias for <code>isTop</code>.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.canGoUp</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.canGoLeft'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.canGoLeft</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Alias for <code>isLeftmost</code></p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.canGoLeft</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.canGoRight'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.canGoRight</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Alias for <code>isRightmost</code></p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.canGoRight</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.canGoDown'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.canGoDown</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Alias for <code>isBranch</code></p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.canGoDown</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.edit'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.edit</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Replaces the current item with value returned
+by calling <code>fn</code> with the current item.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.edit</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code> Function that takes the old item
+and returns a new item.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.replace'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.replace</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Replaces the current item with the given value.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.replace</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>replaceWith</span> <code class='quiet'>(T)</code> item to replace the current one with.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.insertLeft'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.insertLeft</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Inserts a new item as the left sibling.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.insertLeft</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>item</span> <code class='quiet'>(T)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.insertRight'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.insertRight</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Inserts a new item as the right sibling.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.insertRight</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>item</span> <code class='quiet'>(T)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.insertChild'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.insertChild</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Inserts a new item as the leftmost child.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.insertChild</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>item</span> <code class='quiet'>(T)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.appendChild'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.appendChild</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Inserts a new item as the rightmost child.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.appendChild</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>item</span> <code class='quiet'>(T)</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='Zipper#Zipper.prototype.remove'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>Zipper.prototype.remove</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Removes item at the current location.
+Returns location that would be previous in depth first search.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Zipper.prototype.remove</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='arrayzipper'>
+      ArrayZipper
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/array_zipper.js#L12-L16'>
+      <span>./src/array_zipper.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Zipper for nested Arrays.</p>
+<p>Don&#x27;t use with new keyword - use the function plainly
+or with <code>ArrayZipper.from([1, 2, 3])</code>.</p>
+
+
+  <div class='pre p1 fill-light mt0'>ArrayZipper</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>arr</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code> the data structure to make a zipper for
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+
+  <h2 id='Visitors' class='mt0'>
+    Visitors
+  </h2>
+
+  
+    <p>Module for implementing visitors to a data structure with zippers.</p>
+<p>Every member is importable under <code>zippa</code>. <code>import { visit, onPre, onPost } from &#x27;zippa&#x27;</code></p>
+
+  
+</section>
+</div>
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='visit'>
+      visit
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/visit.js#L115-L171'>
+      <span>./src/visit.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Visits the data structure in depth-first order, calling
+one or more visitors on each node, on pre and post events.</p>
+<p>The visitor functions are called with three arguments:</p>
+<ul>
+<li><code>event</code> - <a href="#pre">PRE</a> or <a href="#post">POST</a></li>
+<li><code>item</code> - the item currently being visited</li>
+<li><code>state</code> - the state of the visit</li>
+</ul>
+<p>If you&#x27;re visiting for side-effects, you don&#x27;t have to return
+anything from your visitor function. To edit items, visit state,
+or stop the visit, you must return an object which can have
+zero or more of the following keys:</p>
+<ul>
+<li><code>item</code>: if supplied, will replace the item at the current location
+with the supplied value. The data structure won&#x27;t change if the value
+has the same reference as the current value.</li>
+<li><code>state</code>: if supplied, will update the state of the visit with the
+value. State is shared with all visitors.</li>
+<li><code>stop</code>: if truthy, will stop the visit</li>
+<li><code>cut</code>: if truthy, will skip the subtree of the current node.</li>
+</ul>
+<p>Returns a new data structure of modified items, or the original
+zipper if the structure wasn&#x27;t modified.</p>
+
+
+  <div class='pre p1 fill-light mt0'>visit</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>visitors</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>&gt;)</code> Array of visitor functions
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>initialState</span> <code class='quiet'>([Any])</code> Initial state for the visit
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>initialZipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> A Zipper value to visit
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='onpre'>
+      onPre
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/visit.js#L195-L195'>
+      <span>./src/visit.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Takes a visitor function that takes an <code>item</code> and <code>state</code> argument,
+and returns a visitor function that is only invoked on the pre-event.</p>
+<p>Equal to:</p>
+<pre><code>const myVisitor = (item, state) =&gt; console.log(&#x27;visited item&#x27;, item);
+function visitor(event, item, state) {
+    if (event === PRE) return myVisitor(item, state);
+}
+</code></pre>
+
+
+  <div class='pre p1 fill-light mt0'>onPre</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code> visitor function that takes 
+<code>item</code>
+ and 
+<code>state</code>
+ arguments
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></code>:
+        visitor function
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='onpost'>
+      onPost
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/visit.js#L214-L214'>
+      <span>./src/visit.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Takes a visitor function that takes an <code>item</code> and <code>state</code> argument,
+and returns a visitor function that is only invoked on the post-event.</p>
+<p>Equal to:</p>
+<pre><code>const myVisitor = (item, state) =&gt; console.log(&#x27;visited item&#x27;, item);
+function visitor(event, item, state) {
+    if (event === POST) return myVisitor(item, state);
+}
+</code></pre>
+
+
+  <div class='pre p1 fill-light mt0'>onPost</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code> visitor function that takes 
+<code>item</code>
+ and 
+<code>state</code>
+ arguments
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></code>:
+        visitor function
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='pre'>
+      PRE
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/visit.js#L20-L20'>
+      <span>./src/visit.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Pre-event identifier.</p>
+
+
+  <div class='pre p1 fill-light mt0'>PRE</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='post'>
+      POST
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/visit.js#L28-L28'>
+      <span>./src/visit.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Post-event identifier.</p>
+
+
+  <div class='pre p1 fill-light mt0'>POST</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+
+  <h2 id='Walking' class='mt0'>
+    Walking
+  </h2>
+
+  
+    <p>Module for walking data structures with zippers.</p>
+<p>Every member is importable under <code>zippa</code>. <code>import { walk, preWalk, postWalk } from &#x27;zippa&#x27;</code></p>
+
+  
+</section>
+</div>
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='walk'>
+      walk
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/walk.js#L63-L72'>
+      <span>./src/walk.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Walks the data structure in depth-first order,
+applying inner and outer functions before and after (respectively) each
+item&#x27;s subtree is walked.</p>
+<p>Returns a new data structure from modified items, or the original
+zipper if the structure wasn&#x27;t modified.</p>
+
+
+  <div class='pre p1 fill-light mt0'>walk</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>inner</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code> function applied to each item before it&#x27;s subtree is walked
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>outer</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code> function applied to each item after it&#x27;s subtree was walked
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> A Zipper value to walk
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='prewalk'>
+      preWalk
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/walk.js#L39-L47'>
+      <span>./src/walk.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Walks the data structure in depth-first order, applying
+the function before the item&#x27;s subtree has been walked.</p>
+<p>Returns a new data structure of modified items, or the original
+zipper if the structure wasn&#x27;t modified.</p>
+
+
+  <div class='pre p1 fill-light mt0'>preWalk</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code> function applied to each item before it&#x27;s subtree is walked
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> A Zipper value to walk
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='postwalk'>
+      postWalk
+    </h3>
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tommikaikkonen/zippa/blob/52cceb7feeacc2f994a748a81064e9721aeef522/./src/walk.js#L18-L26'>
+      <span>./src/walk.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Walks the data structure in depth-first order, applying
+the function after the item&#x27;s subtree has been walked.</p>
+<p>Returns a new data structure of modified items, or the original
+zipper if the structure wasn&#x27;t modified.</p>
+
+
+  <div class='pre p1 fill-light mt0'>postWalk</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code> function applied to each item after it&#x27;s subtree was walked
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>zipper</span> <code class='quiet'>(<a href="#zipper">Zipper</a>)</code> A Zipper value to walk
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#zipper">Zipper</a></code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+      </div>
+    </div>
+  </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>
