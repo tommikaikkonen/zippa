@@ -1,6 +1,6 @@
 import { onPre, visit } from '../index';
 
-const reduceVisitor = fn => (item, state) => fn(state, item);
+const reduceVisitor = fn => (item, state) => ({ state: fn(state, item) });
 
 export const reduce = (fn, initialAcc, zipper) =>
     visit(

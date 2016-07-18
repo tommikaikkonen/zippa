@@ -104,13 +104,16 @@ function finishVisit(loc, state) {
  * - `stop`: if truthy, will stop the visit
  * - `cut`: if truthy, will skip the subtree of the current node.
  *
- * Returns a new data structure of modified items, or the original
- * zipper if the structure wasn't modified.
+ * Returns an object with the following keys:
+ *
+ * - `item`: the item value in the zipper after visiting the whole data structure.
+ * - `zipper`: the zipper value after visiting the whole data structure.
+ * - `state`: the state at the end of the visit.
  *
  * @param  {Function[]} visitors - Array of visitor functions
  * @param  {*} [initialState] - Initial state for the visit
  * @param  {Zipper} initialZipper - A Zipper value to visit
- * @return {Zipper}
+ * @return {Object}
  */
 export const visit = curry(function visit(visitors, initialState, initialZipper) {
     let direction = DOWN;

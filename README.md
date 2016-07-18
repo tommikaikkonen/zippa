@@ -1,9 +1,11 @@
 zippa
 ==============
 
-**Generic [zipper](https://en.wikipedia.org/wiki/Zipper_(data_structure)) library for JavaScript. Comes with a concrete ArrayZipper.**
+**Generic [zipper](https://en.wikipedia.org/wiki/Zipper_(data_structure)) library for JavaScript with functional visitor utilities.**
 
-Similar to [Neith](https://github.com/mattbierner/neith), but with JS Arrays instead infinite streams and a chainable API in addition to a plain function API.
+The Zipper core is similar to [Neith](https://github.com/mattbierner/neith), but with JS Arrays instead infinite streams and a chainable API in addition to a plain function API.
+
+Functional visiting is implemented in the powerful `visit(visitors, initialState, zipper)` function, which visits the structure in depth-first order without recursion, maintaining a visit state, allowing breaking out of the visit, skipping subtrees, and handling pre and post visits separately for each element. `walk`, `preWalk` and `postWalk` are implemented using `visit`.
 
 ## Example Usage with ArrayZipper
 
@@ -109,6 +111,63 @@ z.value().value
 
 z.down().right().value().value
 // 3
+```
+
+## Example: Implementing reduce for TreeZipper with `visit`
+
+For reduce, we want to visit each node in the tree, keep a reference to an `acc` value, and call `reducerFn(acc, node)` on each node. You could do it without `zippa.visit`, but this is a good demonstration of `visit` usage.
+
+`reduce`'s function signature looks like this:
+
+```javascript
+declare function reduce<T>(fn: (acc: T, item: any) => T, initialAcc: any, zipper: Zipper): T;
+```
+
+The function passed to reduce takes `acc` first and the current item second, while a `zippa` visitor function takes an event type first (`zippa.PRE` or `zippa.POST`), item second and state third. To change the state of a visit, the visitor needs to return an object describing the changes. We want to update the state, so we have to return an object with the `state` key, whose value is the new state.
+
+To make a visitor function out of a reducer function, we make a higher order function that returns a function conforming to the visitor interface. We also utilize `zippa.onPre`:
+
+```javascript
+import { onPre } from 'zippa';
+const makeReduceVisitor = fn => onPre((item, state) => ({ state: fn(state, item) }));
+```
+
+`onPre(g)` returns a function that calls `g` with `item` and `state` only on the `PRE` event, so we don't need to deal with the event identifiers ourselves.
+
+Now that we have a way to transform a reducer function to a visitor function, we'll need to pass the visitor function to `zippa.visit`. `zippa.visit` takes a list of visitor functions, an initial state, and a zipper value as arguments.
+
+```javascript
+import { visit } from 'zippa';
+
+export const reduce = (fn, initialAcc, zipper) => {
+    const {
+        state,
+        item,
+        zipper
+    } = visit(
+        [makeReduceVisitor(fn)],
+        initialAcc,
+        zipper
+    );
+
+    return state;
+}
+```
+
+Using the reduce function, we can gather all the data in our tree:
+
+```javascript
+const tree = new Node(
+    1,
+    [
+        new Node(2),
+        new Node(3)
+    ]
+);
+
+const z = TreeZipper.from(tree);
+const numbers = reduce((acc, node) => acc.concat(node.value), [], z);
+// [1, 2, 3]
 ```
 
 ## API
