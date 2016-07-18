@@ -1,4 +1,9 @@
 toc:
+  - name: zippa
+    description: |
+      The main zipper module.
+
+      Every member is importable under the package. I.e. `import { makeZipper, value } from 'zippa'`
   - makeZipper
   - value
   - root
@@ -30,4 +35,21 @@ toc:
   - remove
   - Zipper
   - ArrayZipper
+  - name: Visitors
+    description: |
+      Module for implementing visitors to a data structure with zippers.
+
+      Every member is importable under `zippa`. `import { visit, onPre, onPost } from 'zippa'`
+  - visit
+  - onPre
+  - onPost
+  - PRE
+  - POST
+  - name: Walking
+    description: |
+      Module for walking data structures with zippers.
+
+      Every member is importable under `zippa`. `import { walk, preWalk, postWalk } from 'zippa'`
   - walk
+  - preWalk
+  - postWalk

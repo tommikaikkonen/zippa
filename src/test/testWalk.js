@@ -1,36 +1,19 @@
 import chai from 'chai';
 import sinonChai from 'sinon-chai';
-import { makeZipper } from '../index';
-import { postWalk, preWalk } from '../walk';
+import { makeTreeZipper } from '../index';
+import { postWalk, preWalk } from '../index';
+import { Node, TreeZipper } from './tree_zipper';
+import { collect } from './utils';
 
 chai.use(sinonChai);
 const { expect } = chai;
-
-class Node {
-    constructor(data, children = []) {
-        this.data = data;
-        this.children = children;
-    }
-}
-
-function getChildren(node) {
-    return node.children;
-}
-
-function makeNode(node, children) {
-    return new Node(node.data, children);
-}
-
-function isBranch(node) {
-    return !!getChildren(node).length;
-}
 
 const log = (node) => {
     console.log('LOG NODE:', node.data);
     return node;
 };
 
-describe('TreeZipper', () => {
+describe('TreeZipper walk', () => {
     function getTree() {
         return new Node(
             1,
@@ -47,23 +30,16 @@ describe('TreeZipper', () => {
         );
     }
 
-    const Zipper = makeZipper(isBranch, getChildren, makeNode);
 
     function incrementNode(node) {
         return new Node(node.data + 1, node.children);
     }
 
     it('postwalk works', () => {
-        let z = Zipper.from(getTree());
+        let z = TreeZipper.from(getTree());
 
-        function gatherNumbers(listRef, node) {
-            listRef.push(node.data);
-            return node;
-        }
+        const initialNumbers = collect(node => node.data, z);
 
-        // Assert initial is correct
-        const initialNumbers = [];
-        preWalk(gatherNumbers.bind(null, initialNumbers), z);
         expect(initialNumbers)
             .to.deep.equal([1, 2, 4, 5, 3]);
 
@@ -71,9 +47,22 @@ describe('TreeZipper', () => {
         z = postWalk(incrementNode, z);
 
         // Check result.
-        const afterNumbers = [];
-        preWalk(gatherNumbers.bind(null, afterNumbers), z);
+        const afterNumbers = collect(node => node.data, z);
         expect(afterNumbers)
             .to.deep.equal([2, 3, 5, 6, 4]);
+    });
+
+    it('prewalk is in correct order', () => {
+        let z = TreeZipper.from(getTree());
+
+        function _gatherNumbers(listRef, node) {
+            listRef.push(node.data);
+            return node;
+        }
+        const treeNumbers = [];
+        const gatherNumbers = _gatherNumbers.bind(null, treeNumbers);
+        z = preWalk(gatherNumbers, z);
+
+        expect(treeNumbers).to.deep.equal([1, 2, 4, 5, 3]);
     });
 });

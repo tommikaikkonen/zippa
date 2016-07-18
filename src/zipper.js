@@ -91,7 +91,7 @@ const _raiser = msg => () => {
 
 const raise = pipe(_raiser, sideEffect);
 
-function zipperFrom(oldLoc, newItem, path, meta) {
+export function zipperFrom(oldLoc, newItem, path, meta) {
     return new Zipper(newItem, path || getPath(oldLoc), meta || getMeta(oldLoc));
 }
 

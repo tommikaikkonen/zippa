@@ -113,7 +113,7 @@ z.down().right().value().value
 
 ## API
 
-For API reference, see [DOCUMENTATION.md](DOCUMENTATION.md)
+[See API reference here](http://tommikaikkonen.github.io/zippa/).
 
 ## License
 

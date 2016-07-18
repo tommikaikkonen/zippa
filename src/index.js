@@ -1,16 +1,22 @@
 import * as zip from './zipper';
-import walk from './walk';
+import * as walk from './walk';
 import ArrayZipper from './array_zipper';
+import * as visit from './visit';
 
 
-export const makeZipper = zip.makeZipper;
-export { zip, walk, ArrayZipper };
+export * from './walk';
+export * from './visit';
+export * from './zipper';
+export { zip, ArrayZipper };
 
 const mainExport = {
     ...zip,
+    ...visit,
     ArrayZipper,
     walk,
-    makeZipper,
+    makeZipper: zip.makeZipper,
+    visit,
+    zip,
 };
 
 export default mainExport;

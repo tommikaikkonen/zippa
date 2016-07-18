@@ -1,28 +1,10 @@
 import chai from 'chai';
 import sinonChai from 'sinon-chai';
 import { makeZipper } from '../index';
+import { Node, TreeZipper } from './tree_zipper';
 
 chai.use(sinonChai);
 const { expect } = chai;
-
-class Node {
-    constructor(data, children = []) {
-        this.data = data;
-        this.children = children;
-    }
-}
-
-function getChildren(node) {
-    return node.children;
-}
-
-function makeNode(node, children) {
-    return new Node(node.data, children);
-}
-
-function isBranch(node) {
-    return !!getChildren(node).length;
-}
 
 const log = (node) => {
     console.log(node.data);
@@ -45,8 +27,6 @@ describe('TreeZipper', () => {
         );
     }
 
-    const Zipper = makeZipper(isBranch, getChildren, makeNode);
-
     function dfswalk(z) {
         let _z = z;
         const result = [];
@@ -58,7 +38,7 @@ describe('TreeZipper', () => {
     }
 
     it('DFS iteration works', () => {
-        let z = Zipper.from(getTree());
+        let z = TreeZipper.from(getTree());
 
         const iterationOrder = [];
         while (!z.isEnd()) {
@@ -74,7 +54,7 @@ describe('TreeZipper', () => {
     });
 
     it('replacing works', () => {
-        const z = Zipper.from(getTree());
+        const z = TreeZipper.from(getTree());
         const changedZipper = z.down().rightmost().remove().root();
 
         const dfsorder = dfswalk(changedZipper);

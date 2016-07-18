@@ -5,9 +5,13 @@ MOCHA_TARGET=src/**/test*.js
 
 clean:
 	rm -rf lib
+	rm -rf docs
 
-docs:
+mddocs:
 	$(BIN)/documentation build -f md -o DOCUMENTATION.md -g ./src/*.js --config ./documentation.yml
+
+docs: clean
+	$(BIN)/documentation build -f html -o ./docs -g --shallow ./src/*.js --config ./documentation.yml
 
 build: clean
 	$(MAKE) docs
@@ -22,6 +26,9 @@ test-watch: lint
 
 lint:
 	$(BIN)/eslint src
+
+deploydocs: build
+	$(BIN)/gulp deploy
 
 
 PHONY: build clean test test-watch lint docs

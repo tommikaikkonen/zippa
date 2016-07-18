@@ -7,14 +7,19 @@
   "rules": {
     "spaced-comment": 0,
     "indent": [2, 4],
-    "no-unused-vars": 1,
     "id-length": 0,
     "no-unused-expressions": 0,
     "no-param-reassign": ["warn", { "props": true }],
     "max-len": ["warn"],
     "no-else-return": 0,
-    "no-confusing-arrow": 1,
-    "prefer-rest-params": 0
+    "prefer-rest-params": 0,
+    "no-unused-vars": [
+      "warn",
+      { "varsIgnorePattern": "^_$", "argsIgnorePattern": "^_$" }
+    ],
+    "no-confusing-arrow": 0,
+    "no-underscore-dangle": 0,
+    "prefer-arrow-callback": ["warn", { "allowNamedFunctions": true }],
   },
   "ecmaFeatures": {
     "restParams": true,
