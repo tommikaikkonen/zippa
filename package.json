@@ -1,6 +1,6 @@
 {
   "name": "zippa",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A Generic Zipper Library",
   "main": "lib/index.js",
   "scripts": {
