@@ -9,6 +9,7 @@ import {
     down,
     isNotTop,
     replace,
+    root,
 } from './zipper';
 
 /**
@@ -45,30 +46,32 @@ function visitItem(event, initialItem, initialState, visitors) {
             cut,
         } = res;
 
+        if (has('item', res)) _item = item;
+        if (has('state', res)) _state = state;
+
         if (stop || cut) {
             _stop = stop;
             _cut = cut;
             break;
         }
-
-        if (has('item', res)) _item = item;
-        if (has('state', res)) _state = state;
     }
 
     return { item: _item, state: _state, stop: _stop, cut: _cut };
 }
 
 function visitLocation(event, zipper, _state, visitors) {
+    const res = visitItem(event, value(zipper), _state, visitors) || {};
     const {
         item,
         state,
         stop,
         cut,
-    } = visitItem(event, value(zipper), _state, visitors);
+    } = res;
 
     return {
-        loc: replace(item, zipper), // Will not do anything if ctx.item === value(item)
-        state,
+        // Will not do anything if ctx.item === value(item)
+        loc: res.hasOwnProperty('item') ? replace(item, zipper) : zipper,
+        state: res.hasOwnProperty('state') ? state : _state,
         stop,
         cut,
     };
@@ -129,7 +132,7 @@ export const visit = curry(function visit(visitors, initialState, initialZipper)
             state = res.state;
             z = res.loc;
 
-            if (res.break) return finishVisit(z, state);
+            if (res.stop) return finishVisit(z, state);
 
             if (!res.cut && canGoDown(z)) {
                 z = down(z);
@@ -145,7 +148,7 @@ export const visit = curry(function visit(visitors, initialState, initialZipper)
             state = res.state;
             z = res.loc;
 
-            if (res.break) return finishVisit(z, state);
+            if (res.stop) return finishVisit(z, state);
 
             if (canGoRight(z)) {
                 z = right(z);

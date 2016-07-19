@@ -1,6 +1,5 @@
 import chai from 'chai';
 import sinonChai from 'sinon-chai';
-import { makeTreeZipper } from '../index';
 import { postWalk, preWalk } from '../index';
 import { Node, TreeZipper } from './tree_zipper';
 import { collect } from './utils';

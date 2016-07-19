@@ -55,7 +55,8 @@ describe('TreeZipper', () => {
 
     it('replacing works', () => {
         const z = TreeZipper.from(getTree());
-        const changedZipper = z.down().rightmost().remove().root();
+        const changedZipper = z.down().rightmost().remove()
+            .root();
 
         const dfsorder = dfswalk(changedZipper);
         expect(dfsorder).to.deep.equal([

@@ -3,9 +3,16 @@ zippa
 
 **Generic [zipper](https://en.wikipedia.org/wiki/Zipper_(data_structure)) library for JavaScript with functional visitor utilities.**
 
-The Zipper core is similar to [Neith](https://github.com/mattbierner/neith), but with JS Arrays instead infinite streams and a chainable API in addition to a plain function API.
+The zippa core is similar to [Neith](https://github.com/mattbierner/neith), but implemented with JS Arrays instead infinite streams, and offers chainable API in addition to a functional API. The JS Array implementation should be more performant for data structures with low fan-out.
 
 Functional visiting is implemented in the powerful `visit(visitors, initialState, zipper)` function, which visits the structure in depth-first order without recursion, maintaining a visit state, allowing breaking out of the visit, skipping subtrees, and handling pre and post visits separately for each element. `walk`, `preWalk` and `postWalk` are implemented using `visit`.
+
+Inspired by:
+
+- [`clojure.zip`](https://clojure.github.io/clojure/clojure.zip-api.html)
+- [Tree visitors in Clojure](http://www.ibm.com/developerworks/library/j-treevisit/)
+- [`zip-visit`](https://github.com/akhudek/zip-visit)
+- [`Neith`](https://github.com/mattbierner/neith)
 
 ## Example Usage with ArrayZipper
 

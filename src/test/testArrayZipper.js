@@ -19,7 +19,12 @@ describe('ArrayZipper', () => {
         expect(pipe(zip.down, zip.right, zip.value)(z)).to.equal(2);
         expect(z.down().value()).to.equal(1);
         expect(z.down().right().value()).to.equal(2);
-        expect(z.down().right().right().value()).to.equal(3);
+        expect(z
+            .down()
+            .right()
+            .right()
+            .value()
+        ).to.equal(3);
     });
 
     it('gets correct values from nested list', () => {
@@ -40,7 +45,9 @@ describe('ArrayZipper', () => {
     it('successfully replaces elements', () => {
         const z = ArrayZipper.from(simpleArr);
         expect(
-            z.down().right().replace(10).root().value()
+            z.down().right().replace(10)
+                .root()
+                .value()
         ).to.deep.equal([1, 10, 3, 4]);
     });
 
@@ -49,10 +56,14 @@ describe('ArrayZipper', () => {
         const inc = x => x + 1;
         expect(
             z.down().edit(inc)
-             .right().edit(inc)
-             .right().edit(inc)
-             .right().edit(inc)
-             .root().value()
+             .right()
+             .edit(inc)
+             .right()
+             .edit(inc)
+             .right()
+             .edit(inc)
+             .root()
+             .value()
         ).to.deep.equal([2, 3, 4, 5]);
     });
 
@@ -60,7 +71,9 @@ describe('ArrayZipper', () => {
         const z = ArrayZipper.from(nested);
 
         expect(
-            z.down().right().replace([3, 4, 5, 6]).root().value()
+            z.down().right().replace([3, 4, 5, 6])
+            .root()
+            .value()
         ).to.deep.equal([
             [1, 2],
             [3, 4, 5, 6],
@@ -70,14 +83,17 @@ describe('ArrayZipper', () => {
     it('insert elements to the right', () => {
         const z = ArrayZipper.from([[1, 2], [5, 6]]);
         expect(
-            z.down().insertRight([3, 4]).root().value()
+            z.down().insertRight([3, 4]).root()
+                .value()
         ).to.deep.equal([[1, 2], [3, 4], [5, 6]]);
     });
 
     it('insert elements to the left', () => {
         const z = ArrayZipper.from([[1, 2], [5, 6]]);
         expect(
-            z.down().rightmost().insertLeft([3, 4]).root().value()
+            z.down().rightmost().insertLeft([3, 4])
+            .root()
+            .value()
         ).to.deep.equal([[1, 2], [3, 4], [5, 6]]);
     });
 
@@ -92,7 +108,10 @@ describe('ArrayZipper', () => {
         const z = ArrayZipper.from(nested);
 
         expect(
-            z.down().right().down().remove().root().value()
+            z.down().right().down()
+            .remove()
+            .root()
+            .value()
         ).to.deep.equal([[1, 2], [4]]);
     });
 
@@ -119,7 +138,8 @@ describe('ArrayZipper', () => {
 
     it('iterates through array with prev', () => {
         let z = ArrayZipper.from(nested);
-        z = z.down().rightmost().down().rightmost();
+        z = z.down().rightmost().down()
+            .rightmost();
 
         expect(z.value()).to.deep.equal(4);
 
